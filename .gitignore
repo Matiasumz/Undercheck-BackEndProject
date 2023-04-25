@@ -1,0 +1,12 @@
+# Ignorar archivos de configuración local
+*.venv
+
+# Ignorar archivos pycache y byte-compiled
+__pycache__/
+*.pyc
+
+# Ignorar el directorio de media
+/media/
+
+# Ignorar el directorio de archivos estáticos
+/static/
