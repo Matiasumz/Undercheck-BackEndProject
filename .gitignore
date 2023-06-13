@@ -1,5 +1,5 @@
 # Ignorar archivos de configuración local
-*.venv
+*venv
 
 # Ignorar archivos pycache y byte-compiled
 __pycache__/
@@ -10,3 +10,9 @@ __pycache__/
 
 # Ignorar el directorio de archivos estáticos
 /static/
+
+db.sqlite3
+
+git@github.com:Matiasumz/Undercheck-BackEndProject.git/
+
+git@github.com:Matiasumz

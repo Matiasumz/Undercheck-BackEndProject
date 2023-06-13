@@ -1,0 +1,10 @@
+
+<ol>
+    {% for evento in eventos %}
+            <li>
+                <p>Nombre: {{evento.nombre}}.</p>
+                <p>Ubicación: {{evento.ubicacion}}.</p>
+                <p>descripcion: {{evento.descripcion}}.</p>
+            </li>
+        {% endfor %}
+</ol>

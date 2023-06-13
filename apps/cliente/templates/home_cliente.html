@@ -37,11 +37,11 @@
                             <!-- Page heading-->
                             <h1 class="fw-bolder">UnderCheck®</h1>
                             <p class="fw-bolder">
-                                <big>Keep it Under</big>                               
+                                <big>Keep it Under</big>
                                 <div class="containerbuttom">
-                                    <a href="{% url 'listarevento' %}" class="btn btn-secondary button" id="login">
-                                        Eventos
-                                    </a>
+                                        <a href="{% url 'login' %}" class="btn btn-secondary button" id="login">
+                                            Ingresar
+                                        </a>
                                 </div>
                             </p>
                         </div>
@@ -54,15 +54,6 @@
                 <div class="container px-4">
                     <div class="row gx-4 justify-content-center">
                         <div class="col-lg-8">
-                            <body>
-                                <p> Lista de Clientes: </p>
-                                {% for clientes in cliente %}
-                                    <p>{{ cliente.nombre }}</p>
-                                {% endfor %}
-                                <a href="{% url 'crear_cliente' %}">Crear nuevo cliente</a><br>
-                            
-                                <a href="{% url 'logout' %}">Cerrar sesión</a>
-                            </body>
                         </div>
                     </div>
                 </div>

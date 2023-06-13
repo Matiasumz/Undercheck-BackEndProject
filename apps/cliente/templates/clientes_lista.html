@@ -1,0 +1,15 @@
+
+<!DOCTYPE html>
+<html lang="en">   
+    <div>
+        <body>
+            <p> Lista de Clientes: </p>
+            {% for clientes in cliente %}
+                <p>{{ cliente.nombre }}</p>
+            {% endfor %}
+            <a href="{% url 'crear_cliente' %}">Crear nuevo cliente</a><br>
+
+            <a href="{% url 'logout' %}">Cerrar sesión</a>
+        </body>
+    </div>
+</html>
