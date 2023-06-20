@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+    <h1>Panel de Usuario</h1>
+    <div class="eventos-containers">
+        {% if tickets %}
+        <h2 class="card-title">Tickets comprados:</h2>
+            {% for ticket in tickets %}
+                <div class="text-center text-black">
+                    <article class="card">
+                        <div class="card-container">
+                            <h2 class="card-title">{{ ticket.evento.nombre }}</h2>
+                                <p class="card-title">{{ ticket.codigo_QR }}</p>
+                                <p class="card-title">{{ticket.precio_ticket}}</p>
+
+                        </div>
+                    </article>
+            {% endfor %}
+        {% else %}
+            <p>No se encontraron tickets comprados.</p>
+            <div class="containerbuttom">
+                <a href="{% url 'listarevento' %}" class="btn btn-secondary button" id="login">
+                    Comprar!
+                </a>
+            </div>
+        {% endif %}
+
+    <div class="containerbuttom">
+            <a href="{% url 'listarevento' %}" class="btn btn-secondary button" id="login">
+                Eventos
+            </a>
+    </div>
+    <div class="containerbuttom">
+        
+        <a href="{% url 'logout' %}" class="btn btn-secondary button" id="login">Salir</a>
+        
+      </div>
+{% endblock %}

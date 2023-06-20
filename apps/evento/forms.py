@@ -7,5 +7,5 @@ class EventoFormulario(forms.ModelForm):
 
     class Meta:
         model = Evento
-        fields = ['nombre','ubicacion','descripcion']
+        fields = ['nombre','fecha','ubicacion','descripcion','precio_ticket']
         

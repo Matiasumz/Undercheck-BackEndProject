@@ -51,11 +51,14 @@
                                             <div class="card-container">
                                                 <h2 class="card-title">{{evento.nombre}}</h2>
                                                 <p class="card-title">{{evento.ubicacion}}</p>
-                                                <div class="containerbuttom">
-                                                    <a href="{% url 'agradecimiento' evento.nombre %}" class="btn btn-secondary button" id="login">
-                                                        Comprar
-                                                    </a>
-                                                </div>
+                                                <p class="card-title">{{evento.fecha}}</p>
+                                                <p class="card-title">{{evento.precio_ticket}}</p>
+                                                <form method="post" action="{% url 'agradecimiento' evento.nombre %}">
+                                                    {% csrf_token %}
+                                                    <button type="submit" class="btn btn-secondary button" id="login">
+                                                      Comprar
+                                                    </button>
+                                                </form>
                                             </div>
                                         </article>
                                     </div>
@@ -64,6 +67,11 @@
                             {% endblock %}
                         
                             </p>
+                            <div class="containerbuttom">
+                                <a href="{% url 'panel_usuario' %}" class="btn btn-secondary button" id="login">
+                                    Panel
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,12 +1,14 @@
 from django.db import models
 
+from apps.custom_user.models import CustomUser
+
 # Create your models here.
 class Ticket(models.Model):
     evento = models.ForeignKey(
         'evento.Evento', on_delete=models.CASCADE, related_name='ticket'
         )
     cliente = models.ForeignKey(
-        'cliente.Cliente', on_delete=models.CASCADE, related_name='ticket'
+        CustomUser, on_delete=models.CASCADE, related_name='ticket'
         )
     fecha_emision = models.DateTimeField()
     fecha_vencimiento = models.DateTimeField()
