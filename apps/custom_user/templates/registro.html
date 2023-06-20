@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1>Registrate !</h1>
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+    <div class="form-group">
+      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+      {{ field }}
+      {% if field.errors %}
+        <div class="error-message">
+          {% for error in field.errors %}
+            <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+    <button type="submit" class="btn btn-secondary button" id="login">Registrarse</button>
+  </form>
+  <div class="containerbuttom">
+        
+    <a href="{% url 'logout' %}" class="btn btn-secondary button" id="login">Volver</a>
+    
+  </div>
+{% endblock %}

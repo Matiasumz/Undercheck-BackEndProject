@@ -11450,4 +11450,65 @@ button, a#login {
   height: 8vh; /* Ajusta la altura según tus necesidades */
 }
 
- 
+/* carta de evento*/
+
+.card {
+    width: 350px;
+    margin: 30px auto;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 1em;
+}
+
+.card-img {
+    width: 100%;
+    display: block;
+    border-radius: 1em 1em 0 0;
+}
+
+.card-container {
+    text-align: center;
+    padding: 40px 15px;
+    border-radius: 0 0 1em 1em;
+}
+
+.card-title {
+    margin-bottom: 10px;
+}
+
+.card-paragraph {
+    line-height: 1.5;
+    text-align: start;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: #CC021C;
+    color: white;
+    text-decoration: none;
+    padding: 1em 2em;
+    margin-top: 1em;
+    border-radius: 2em;
+}
+
+/* layout tarjetas :) */
+
+.eventos-containers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* CSS */
+.eventos-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  width: 350px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+  border-radius: 1em;
+}

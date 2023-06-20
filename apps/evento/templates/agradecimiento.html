@@ -1,0 +1,17 @@
+<!-- agradecimiento.html -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div>
+        <h1>¡Gracias por comprar la entrada de "{{ nombre_evento }}"!</h1>
+        <h3>Te va a llegar un codigo QR al Mail con el cual te registraste.</h3>
+    </div>
+    <div class="containerbuttom">
+        
+        <a href="{% url 'logout' %}" class="btn btn-secondary button" id="login">Finalizar</a>
+        
+    </div>
+{% endblock %}

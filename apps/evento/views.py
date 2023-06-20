@@ -33,4 +33,7 @@ class CrearEvento(CreateView):
     
 
 
+def agradecimiento_view(request, nombre_evento):
+    return render(request, 'agradecimiento.html', {'nombre_evento': nombre_evento})
+
 

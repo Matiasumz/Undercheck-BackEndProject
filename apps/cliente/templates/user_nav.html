@@ -1,0 +1,9 @@
+
+    <!-- Otros elementos del navbar -->
+    {% if request.user.is_authenticated %}
+      <p>Bienvenido, {{ request.user.username }}</p>
+    {% else %}
+      <p>Inicia sesión</p>
+    {% endif %}
+
+  

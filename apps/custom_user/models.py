@@ -4,3 +4,9 @@ from django.contrib.auth.models import AbstractUser
 
 class CustomUser(AbstractUser):
     telefono= models.IntegerField(null=True,blank=True)
+    email = models.EmailField('Correo electrónico', unique=True)
+
+    # Otros campos adicionales si los tienes
+
+    def __str__(self):
+        return self.username
