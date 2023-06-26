@@ -1,25 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
-    <form action = "/evento/crear" method = "post">
-        {% csrf_token %}
-        <table>
-           Nombre: {{form.nombre}} <br>
-           Descripcion: {{form.descripcion}} <br>
-           Ubicacion: {{form.ubicacion}} <br>
-           Fecha : {{form.fecha}}<br>
-           Precio : {{form.precio_ticket}}<br>
-        </table>
-        
-        
-        <button>Crear</button>
-     </form>
-</body>
-</html>
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+    <body>
+        <h1>¡Crea tu Evento!</h1>
+        <form action = "/evento/crear" method = "post">
+            {% csrf_token %}
+            <div class="form-group">
+
+                Nombre: {{form.nombre}} <br>
+                Descripcion: {{form.descripcion}} <br>
+                Ubicacion: {{form.ubicacion}} <br>
+                Fecha : {{form.fecha}}<br>
+                Precio : {{form.precio_ticket}}<br>
+                <button type="submit" class="btn btn-secondary button">Crear</button>
+            </div>
+        </form>
+    </body>
+    <div class="containerbuttom">
+        <a href="{% url 'listarevento' %}" class="btn btn-secondary button" id="login">
+            Eventos
+        </a>
+    </div>
+{% endblock %}

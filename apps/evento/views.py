@@ -79,6 +79,7 @@ class PanelUsuarioView(LoginRequiredMixin, View):
         '''
 from django.utils import timezone
 
+
 class AgradecimientoView(View):
     def get(self, request, nombre_evento):
         return render(request, 'agradecimiento.html', {'nombre_evento': nombre_evento})
