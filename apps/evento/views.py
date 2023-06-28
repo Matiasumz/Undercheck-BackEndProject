@@ -13,6 +13,11 @@ from apps.ticket.models import Ticket
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.timezone import now
 
+
+from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.contrib.auth.decorators import permission_required
+
+from django.utils.decorators import method_decorator
 # Create your views here.
 
 class EventoView(TemplateView):
@@ -23,21 +28,22 @@ class EventoView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['eventos'] = Evento.objects.all()
         return context
-    
-class CrearEvento(CreateView):
 
+
+class CrearEvento(PermissionRequiredMixin, CreateView):
+    permission_required = 'evento.crear_evento'
     form_class = EventoFormulario
-
     template_name = 'crear_evento.html'
-
     success_url = reverse_lazy('listarevento')
 
-    def form_valid(self, form: BaseModelForm) -> HttpResponse:
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class)
+        form.user = self.request.user  # Pasar el usuario actual al formulario
+        return form
 
-        form.save()
+    def form_valid(self, form):
+        form.instance.cliente = self.request.user
         return super().form_valid(form)
-    
-
 '''
 def agradecimiento_view(request, nombre_evento):
     return render(request, 'agradecimiento.html', {'nombre_evento': nombre_evento})
