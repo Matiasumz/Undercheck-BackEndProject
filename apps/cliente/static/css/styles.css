@@ -1,3 +1,7 @@
+h1 {
+  font-family: 'Bungee Shade', cursive;
+}
+
 .containerbuttom {
   display: flex;
   justify-content: center;
