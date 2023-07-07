@@ -1,3 +1,4 @@
+from typing import Any, Dict
 from django.contrib.auth import authenticate, login
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
@@ -30,30 +31,26 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 
 # backendifts/alumno
-class ClientesView(LoginRequiredMixin, TemplateView):
-    template_name = 'index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['cliente'] = Cliente.objects.all()
-        return context
-
 
 class HomeClienteView(TemplateView):
     template_name = 'home_cliente.html'
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         return context
     
 class HomeClienteData():
     def get_data(request):
-        login_url = reverse_lazy('login')
-        crear_evento_url = reverse_lazy('crearevento')
-        data = {
-             'login_url': login_url,
-             'crear_evento_url': crear_evento_url
-        }
+        data = {'urls': []}
+        urls = []
+        if request.user.is_authenticated:
+            urls.append(reverse_lazy('listarevento'))
+            urls.append(reverse_lazy('panel_usuario'))
+        else:
+            urls.append(reverse_lazy('login'))
+            urls.append(reverse_lazy('crearevento'))
+            
+        data['urls'] = urls
+
         return JsonResponse(data)
     
 

@@ -8,10 +8,11 @@
 
 async function main() {
 
-    let url = await getDjangoData('/get-data/');
+    let data = await getDjangoData('/get-data/');
     switch (window.location.pathname) {
         case '/':
-            await main_home_client();
+        case '/clientes/inicio':
+            await main_home_client(data.urls);
             break;
         default:
             console.error("Ruta no especificada");
@@ -19,15 +20,15 @@ async function main() {
     }
 }
 
-async function main_home_client() {
-    const btnIngresar = document.querySelector("#btn-ingresar");
-    const btnCreaEvento = document.querySelector("#btn-crea-evento");
-    const data = await getDjangoData('/get-data/');
+async function main_home_client(urls) {
+    const btnIngresar = document.querySelector("#btn-upper");
+    const btnCreaEvento = document.querySelector("#btn-bottom");
+
     btnIngresar.addEventListener("click", () => {
-        window.location.pathname = data.login_url;
+        window.location.pathname = urls[0];
     });
     btnCreaEvento.addEventListener("click", () => {
-        window.location.pathname = data.crear_evento_url;
+        window.location.pathname = urls[1];
     });
 }
 
@@ -40,7 +41,7 @@ async function getDjangoData(url) {
     return data;
 }
 
-main();
+window.onload = main;
 
 
 

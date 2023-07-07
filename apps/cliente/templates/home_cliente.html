@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block content %}
 <div class="bg-custom d-flex justify-content-center align-items-center text-white">
     <div class="row text-center">
@@ -7,9 +6,7 @@
             <!-- Page heading-->
             <h1 class="fw-bolder d-block display-5">UnderCheck®</h1>
             <p class="fs-5 fw-medium">Keep it Under</p>
-            <input class="btn bg-black btn-dark btn-custom d-block mx-auto my-4" id="btn-ingresar" type="button"
-                value="Ingresar" id="login">
-            <input id="btn-crea-evento" type="button" value="Crea tu Evento!">
+            {% include 'user_buttons.html' %}
         </div>
     </div>
 </div>
