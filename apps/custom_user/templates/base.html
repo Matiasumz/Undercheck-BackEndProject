@@ -16,18 +16,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap" rel="stylesheet">
 </head>
 
-<body id="page-top">
+<body>
     <!-- Header-->
-    <header>
+    <header class="position-sticky top-0">
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="mainNav">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id="mainNav">
             <div class="container px-4">
-                <a class="navbar-brand" href="#page-top">UnderCheck®</a>
+                <a id="main-btn" class="navbar-brand" href="#page-top">UnderCheck®</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
                     aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-auto d-flex align-items-center">
                         <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="#planes">Planes</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">Por qué elegirnos</a></li>
@@ -39,7 +39,7 @@
         </nav>
     </header>
     <!-- Main-->
-    <main>
+    <main id="page-top">
         {% block content %}
 
         {% endblock %}

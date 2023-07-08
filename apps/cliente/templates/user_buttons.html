@@ -1,4 +1,4 @@
 {% with class="btn bg-black btn-dark btn-custom d-block mx-auto my-4" id="btn-upper" %}
-    <input class="{{class}}" id="btn-upper" type="button" value="{% if request.user.is_authenticated %}Eventos{% else %}Inicia Sesión{% endif %}">
+    <input class="{{class}}" id="btn-upper" type="button" value="{% if request.user.is_authenticated %}Eventos{% else %}Ingresar{% endif %}">
     <input class="{{class}}" id="btn-bottom" type="button" value="{% if request.user.is_authenticated %}Panel{% else %}Crea tu evento!{% endif %}">
 {% endwith %}

@@ -8,6 +8,8 @@
 
 async function main() {
 
+    setupHeaderScroll();
+
     let data = await getDjangoData('/get-data/');
     switch (window.location.pathname) {
         case '/':
@@ -41,6 +43,29 @@ async function getDjangoData(url) {
     return data;
 }
 
+function setupHeaderScroll() {
+    document.querySelectorAll('li.nav-item a.nav-link').forEach(anchor => {
+        scrollToElement(anchor);
+    });
+
+    const mainBtn = document.querySelector("#main-btn");
+    scrollToElement(mainBtn);
+}
+
+function scrollToElement(originElement) {
+    originElement.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetElement = document.querySelector(this.getAttribute('href'));
+        if (!targetElement) return;
+
+        const offset = targetElement.offsetTop - document.querySelector('header').offsetHeight;
+
+        window.scrollTo({
+            top: offset,
+            behavior: 'smooth'
+        });
+    })
+}
 window.onload = main;
 
 

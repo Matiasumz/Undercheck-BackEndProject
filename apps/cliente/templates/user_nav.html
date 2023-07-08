@@ -1,9 +1,9 @@
 
     <!-- Otros elementos del navbar -->
     {% if request.user.is_authenticated %}
-      <li class="nav-item"><a class="nav-link" > <p>Bienvenido, {{ request.user.username }}</p></a></li>
+      <li class="nav-item"><a class="nav-link" > Bienvenido, {{ request.user.username }}</a></li>
     {% else %}
-      <li class="nav-item"><a class="nav-link" > <p>Inicia Sesión</p></a></li>
+      <li class="nav-item"><a class="nav-link" > Inicia Sesión</a></li>
     {% endif %}
 
   
