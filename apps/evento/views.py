@@ -13,6 +13,7 @@ from apps.ticket.models import Ticket
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.timezone import now
 
+import hashlib
 
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.decorators import permission_required
@@ -98,6 +99,15 @@ class AgradecimientoView(View):
         fecha_emision = timezone.now()
         fecha_vencimiento = fecha_emision + timedelta(days=7)  # Add 7 days of validity to the ticket
 
+        # Generar el contenido para el código QR
+        contenido_qr = f'{evento.nombre}-{request.user.username}-{fecha_emision}'
+
+        # Calcular el hash SHA256 del contenido del código QR
+        hash_codigo_qr = hashlib.sha256(contenido_qr.encode()).hexdigest()
+
+
+
+
         ticket = Ticket.objects.create(
             evento=evento,
             cliente=request.user,
@@ -106,7 +116,7 @@ class AgradecimientoView(View):
             descripcion= descripcion,
             precio=precio_ticket,
             cantidad_vendida=1,
-            codigo_QR='Sample QR code',
+            codigo_QR=hash_codigo_qr,
         )
 
         request.user.tickets.add(ticket)
