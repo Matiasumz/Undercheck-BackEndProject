@@ -25,35 +25,26 @@ def login_view(request):
 
 '''
 
-
-
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.http import JsonResponse
 
 # backendifts/alumno
 
 class HomeClienteView(TemplateView):
     template_name = 'home_cliente.html'
-    def get_context_data(self, **kwargs):
+    def get_context_data(self,**kwargs):
         context = super().get_context_data(**kwargs)
-        return context
-    
-class HomeClienteData():
-    def get_data(request):
-        data = {'urls': []}
+        context["urls"] = {'urls': []}
         urls = []
-        if request.user.is_authenticated:
+        if self.request.user.is_authenticated:
             urls.append(reverse_lazy('listarevento'))
             urls.append(reverse_lazy('panel_usuario'))
         else:
             urls.append(reverse_lazy('login'))
             urls.append(reverse_lazy('crearevento'))
             
-        data['urls'] = urls
-
-        return JsonResponse(data)
+        context["urls"] = urls
+        return context
     
-
 
 
 # backendifts/alumno/<int: id>
