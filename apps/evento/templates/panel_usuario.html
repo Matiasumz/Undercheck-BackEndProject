@@ -11,8 +11,10 @@
                     <article class="card">
                         <div class="card-container">
                             <h2 class="card-title">{{ ticket.evento.nombre }}</h2>
-                                <p class="card-title">{{ ticket.codigo_QR }}</p>
+                                <p class="card-title hash-container">{{ ticket.codigo_QR }}</p>
                                 <p class="card-title">{{ticket.precio_ticket}}</p>
+
+                                <div id="qr-{{ ticket.id }}" class="ticket-container card-body d-flex justify-content-center"> </div>  <!-- Contenedor para el código QR -->
 
                         </div>
                     </article>
