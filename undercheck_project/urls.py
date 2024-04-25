@@ -18,9 +18,10 @@ from django.urls import path,include
 from django.conf import settings
 
 from apps.cliente.views import HomeClienteView
+from apps.home.views import HomeView
 
 urlpatterns = [
-    path("", HomeClienteView.as_view(), name="home"),
+    path("", HomeView.as_view(), name="home"),
     path('admin/', admin.site.urls),
     path('evento/', include('apps.evento.urls')), # para linkear el urls de la app evento uso un include
     path('clientes/', include('apps.cliente.urls')),

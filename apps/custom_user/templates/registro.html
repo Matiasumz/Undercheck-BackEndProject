@@ -1,28 +1,38 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 {% load static %}
-
 {% block content %}
-  <h1>Registrate !</h1>
-  <form method="post">
-    {% csrf_token %}
+<!-- NAV -->
+{% include 'navbar.html' %}
+<!-- CONTENIDO -->
+<form method="post" action="" id="" class="form-login column">
+  {% csrf_token %}
+  <div class="contenido-form-login">
+    <section class="encabezado-form-login  column">
+        <h2 class="titulo-form-login">Regístrate</h2>
+        <p class="parrafo-form-login">Si usted no posee una cuenta, por favor, regístrse.</p>
+    </section>
     {% for field in form %}
-    <div class="form-group">
-      <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+    <section class="form-label-group column">
       {{ field }}
+      <label for="{{ field.id_for_label }}" class="label-style">{{ field.label }}</label>
       {% if field.errors %}
-        <div class="error-message">
-          {% for error in field.errors %}
-            <span>{{ error }}</span>
-          {% endfor %}
-        </div>
-      {% endif %}
-    </div>
+      <div class="error-message">
+        {% for error in field.errors %}
+        <span>{{ error }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </section>
   {% endfor %}
-    <button type="submit" class="btn btn-secondary button" id="login">Registrarse</button>
-  </form>
-  <div class="containerbuttom">
-        
-    <a href="{% url 'logout' %}" class="btn btn-secondary button" id="login">Volver</a>
-    
+    <section class="boton-form-login">
+        <button class="btn-principal btn-login" type="submit"  id="login">Registrarme</button>
+    </section>
+    <section class="links-login column">
+      <p class="">Si ya estás registrado, <a href="/usuario/login">Click aqui</a></p>
+      <p class="">¿No queres iniciar sesión? <a href="/">Volvé al inicio</a></p>
+    </section>
   </div>
+</form>
+<!-- FOOTER -->
+{% include 'footer.html' %}
 {% endblock %}

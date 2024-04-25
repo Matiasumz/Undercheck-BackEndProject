@@ -1,0 +1,128 @@
+/* ESTILOS PARA LA PAGINA LOGIN Y REGISTRAR */
+.form-login{
+    padding: 0px 50px;
+    height: 100vh;
+    color: var(--color_letras_comunes);
+    background-color: var(--color_secundario);
+    justify-content: center;
+    align-items: center;
+}
+.contenido-form-login{
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+/* TITULO Y PARRAFO */
+.encabezado-form-login{
+    margin: 0px 0px 40px;
+}
+.titulo-form-login{
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+}
+.parrafo-form-login{
+    color: var(--color_letras_oscuras);
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+}
+/* LABEL E INPUTS */
+.form-label-group{
+    width: 100%;
+    position: relative;
+}
+.form-label-group input{
+    margin: 15px 0px;
+    padding: 10px;
+    font-size: 18px;
+    content: '';
+    color: var(--color_letras_oscuras);
+    background-color: transparent;
+    caret-color: var(--color_letras_comunes);
+    border: 1px solid var(--color_letras_oscuras);
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5) inset;
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5) inset;
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5) inset;
+}
+.form-label-group input:hover{
+    color: var(--color_letras_comunes);
+    border: 1px solid var(--color_terciario);
+    transition: 0.3s ease;
+}
+.form-label-group input:hover + .label-style{
+    color: var(--color_letras_comunes);
+    transition: 0.3s ease;
+}
+.form-label-group input:focus{
+    color: var(--color_letras_comunes);
+    border: 1px solid var(--color_principal);
+    transition: 0.3s ease;
+}
+.form-label-group input:focus + .label-style{
+    color: var(--color_principal);
+    transition: 0.3s ease;
+}
+/* cambia el color de fondo y de las letras del input al autocompletarlo*/
+.form-label-group input:-webkit-autofill,
+.form-label-group input:-webkit-autofill:hover, 
+.form-label-group input:-webkit-autofill:focus{
+    -webkit-box-shadow: 0 0 0px 1000px var(--color_secundario) inset;
+    transition: 0.3s ease;
+}
+.form-label-group input:-webkit-autofill{
+    -webkit-text-fill-color: var(--color_letras_oscuras);
+    transition: 0.3s ease;
+}
+.form-label-group input:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--color_letras_comunes);
+    transition: 0.3s ease;
+}
+.form-label-group input:not(:placeholder-shown) + .label-style,
+.form-label-group input:focus + .label-style{
+    top: 2px;
+    left: 5px;
+    font-size: 16px;
+    opacity: 1;
+}
+.label-style{
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    color: var(--color_letras_oscuras);
+    font-size: 18px;
+    transform: translateY(-50%);
+    transition: top 0.2s, font-size 0.2s;
+    pointer-events: none;
+}
+/* BOTON */
+.boton-form-login{
+    margin: 30px 0px 0px;
+    width: 500px;
+}
+.btn-login{
+    width: 100%;
+    font-size: 20px;
+    cursor: pointer;
+}
+/* LINKS */
+.links-login{
+    margin: 20px 0px 0px;
+    color: var(--color_letras_oscuras);
+    font-size: 16px;
+    justify-content: center;
+    align-items: center;
+}
+.links-login a{
+    color: var(--bg_btn_principal_hover) ;
+    line-height: 30px;
+}
+.links-login a:hover{
+    color: var(--color_principal);
+}
+.links-login a:active{
+    color: var(--bg_btn_principal_active);
+}

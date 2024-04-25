@@ -1,0 +1,33 @@
+<!-- PAGINA BASE, EN ELLA SE LLAMARAN EL RESTO DE DOCUMNETOS HTML SEGUN SE NECESITE -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- INFO -->
+    <title>UnderCheck®</title>
+    <link rel="icon" type="image/x-icon" href="" />
+    <!-- CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/secciones_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer_style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login_registro_style.css' %}">
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500;8..144,600;8..144,700;8..144,800;8..144,900;8..144,1000&display=swap" rel="stylesheet">
+    <!-- ICONS -->
+    <script src="https://kit.fontawesome.com/c46814ff6f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- CONTENT -->
+    {% block content %}
+    {% endblock %}
+    <!-- JS -->
+    <script src="{% static 'js/animaciones_home.js' %}"></script>
+</body>
+</html>

@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 PROJECTS_APPS = [
+    'apps.home',
     'apps.cliente',
     'apps.evento',
     'apps.ticket',
@@ -66,7 +67,10 @@ ROOT_URLCONF = 'undercheck_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'Undercheck-BackEndProject/apps/home/templates'),
+                 os.path.join(BASE_DIR, 'Undercheck-BackEndProject/apps/custom_user/templates'),
+                 os.path.join(BASE_DIR, 'Undercheck-BackEndProject/apps/cliente/templates'),
+                 os.path.join(BASE_DIR, 'Undercheck-BackEndProject/apps/evento/templates'),],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -115,7 +119,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
 
 TIME_ZONE = 'UTC'
 
@@ -129,9 +133,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-#STATICFILES_DIRS = [
- #   os.path.join(BASE_DIR, 'cliente/static'),
-#]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'Undercheck-BackEndProject/apps/cliente/static'),
+    os.path.join(BASE_DIR, 'Undercheck-BackEndProject/apps/custom_user/static'),
+    os.path.join(BASE_DIR, 'Undercheck-BackEndProject/apps/home/static'),
+    os.path.join(BASE_DIR, 'Undercheck-BackEndProject/apps/evento/static'),
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

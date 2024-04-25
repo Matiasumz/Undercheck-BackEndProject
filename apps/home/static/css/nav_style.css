@@ -1,0 +1,43 @@
+/* ESTILOS PARA EL NAVBAR */
+nav{
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: var(--color_secundario);
+    justify-content: center;
+    z-index: 99;
+}
+#navbar{
+    padding: 0px 50px;
+    width: 1300px;
+    font-size: 20px;
+    font-weight: 400;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    color: var(--color_letras_comunes);
+}
+.logo span{
+    color: var(--color_letras_resaltadas);
+}
+.logo sup{
+    font-size: 10px;
+}
+#nav-list{
+    gap: 40px;
+}
+.navbar-item{
+    padding: 30px 0px;
+}
+.navbar-item a{
+    color: var(--color_letras_oscuras);
+}
+.navbar-item a:hover{
+    color: var(--color_letras_comunes);
+    transition: all 0.3s ease;
+}
+.active{
+    color: var(--color_letras_comunes) !important;
+    transition: 0.3s ease-in-out;
+}

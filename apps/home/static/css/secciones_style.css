@@ -1,0 +1,185 @@
+/* ESTILOS PARA EL HOME DEL USUARIO SIN REGISTRAR/INGRESAR */
+.scroller{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    align-items: center;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+}
+.scroller::-webkit-scrollbar{
+    width: 0px;
+    height: 5px;
+    background-color: transparent;
+}
+.scroller::-webkit-scrollbar-thumb{
+    background-color: var(--color_principal);
+    border-radius: 5px;
+}
+.scroller > div {
+    position: relative; 
+    flex: 0 0 100vh;
+    font-size: 30px;
+    scroll-snap-align: start;
+}
+/* ====== SECCION INICIO ====== */
+#inicio{
+    width: 100%;
+    /* height: 75vh; */
+    /* flex: 0 0 90vh; */
+    justify-content: start;
+}
+#inicio-box{
+    padding: 0px 50px 0px;
+    height: 90vh;
+    width: 100%;
+    color: var(--color_terciario);
+    background-color: var(--color_secundario);
+    justify-content: space-around;
+    align-items: center;
+}
+#info-inicio{
+    height: 90%;
+    justify-content: center;
+    align-items: center;
+}
+/* TITULOS */
+#titulos-inicio{
+    justify-content: center;
+    align-items: center;
+}
+#titulo-inicio{
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 120px;
+    font-weight: 800;
+}
+#titulo-inicio sup{
+    font-size: 25px;
+    vertical-align: 54px;
+}
+#sub-titulo-inicio{
+    font-size: 25px;
+    font-weight: 700;
+}
+/* BOTONES */
+#btns-inicio{
+    margin: 50px 0px 0px;
+    font-size: 20px;
+    font-weight: 400;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+/* FLECHAS */
+#flechas-inicio{
+    margin: 30px 0px 10px;
+    justify-content: center;
+    align-items: center;
+}
+.flecha{
+    width: 25px;
+    filter: invert(100%) sepia(6%) saturate(60%) hue-rotate(96deg) brightness(111%) contrast(96%);
+    opacity: 0;
+    animation: cambiaOpacity 1.5s infinite;
+}
+#flecha2{
+    animation-delay: 0.25s;
+    transform: translate(0px, -10px);
+}
+#flecha3{
+    animation-delay: 0.50s;
+    transform: translate(0px, -20px);
+}
+/* ANIMACION FLECHAS */
+@keyframes cambiaOpacity {
+    0%,100%{
+      opacity: 1;
+    }
+    55% {
+      opacity: 0;
+    }
+  }
+/* ====== SECCIONES ====== */
+.secciones{
+    padding: 0px 50px;
+    height: 100vh;
+    color: var(--color_secundario);
+    align-items: center;
+    justify-content: center;
+}
+/* ====== SECCION NOSOTROS ====== */
+#nosotros div, #planes div, #por-que-elegirnos-box{
+    width: 1300px;
+    justify-content: space-around;
+    align-items: center;
+    gap: 40px;
+}
+#nosotros-text, #planes-text, #porqueelegirnos-text{
+    width: 45%;
+}
+#nosotros-text h2, #planes-text h2, #porqueelegirnos-text h2{
+    font-size: 40px;
+    font-weight: 800;
+}
+#nosotros-text p, #planes-text p, #porqueelegirnos-text p{
+    margin: 15px 0px;
+    font-size: 24px;
+    font-weight: 400;
+}
+#nosotros-text span, #planes-text span{
+    color: var(--bg_btn_principal_hover);
+}
+#nosotros-text em{
+    font-size: 28px;
+    font-weight: 600;
+}
+/* ====== SECCION PLAN ====== */
+
+/* ====== SECCION POR QUE ====== */
+#por-que-elegirnos{
+    width: 100%;
+}
+#motivos{
+    margin: 40px 0px 0px;
+}
+#motivos li{
+    margin: 10px 0px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--color_letras_oscuras);
+    border: 1px solid var(--color_letras_oscuras);
+    border-radius: 10px;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+}
+#motivos li i{
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid var(--color_letras_oscuras);
+    border-radius: 5px;
+    opacity: 0;
+}
+.animar-lista{
+    color: var(--color_secundario) !important;
+    font-weight: 300;
+    background-color: #D4F0D4;
+    border-color: #30B830 !important;
+    transition: 1s ease;
+}
+.animar-lista i{
+    color: #30B830;
+    background-color: var(--color_terciario);
+    border-color: #30B830 !important;
+    opacity: 1 !important;
+    transition: 1s ease;
+}
+
+/* ====== CONTACTO ====== */
+.contacto{
+    justify-content: end;
+    /* flex: 0 0 30vh; */
+
+}

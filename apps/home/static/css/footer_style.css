@@ -1,0 +1,67 @@
+/* ESTILOS PARA EL FOOTER */
+footer{
+    /* position: absolute; */
+    padding: 10px 0px;
+    width: 100vw;
+    /* left: 0;
+    right: 0;
+    bottom: 0%; */
+    color: var(--color_terciario);
+    background-color: var(--color_secundario);
+    justify-content: center;
+}
+#footer{
+    padding: 0px 50px;
+    width: 1300px;
+}
+/* TITULO */
+#box-logo{
+    padding: 15px 10px;
+    font-size: 17px;
+    border-bottom: 1px solid var(--color_letras_oscuras) ;
+}
+#box-logo h3{
+    cursor: default;
+}
+#contactar{
+    color: var(--color_principal);
+    font-size: 18px;
+    cursor: pointer;
+    vertical-align: top;
+}
+/* CONTENIDO */
+#box-footer-content{
+    padding: 30px 10px;
+    justify-content: space-between;
+    align-items: start;
+}
+footer h5{
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+/* REDES SOCIALES */
+#box-redes{
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.link-redes{
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    color: var(--color_secundario);
+    background-color: var(--color_principal);
+    border-radius: 100%;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+/* COPYRIGHT */
+#copi{
+    color: var(--color_letras_oscuras);
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}

@@ -1,0 +1,81 @@
+<!-- CONTENIDO QUE MOSTRARA EL SITIO A LOS USUARIOS SIN REGISTRAR/INGRESAR -->
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+<!-- NAV -->
+{% include 'navbar.html' %}
+<!-- CONTENIDO -->
+<main class="scroller column">
+    <div id="inicio" class="secciones column">
+        <div id="inicio-box" class="column">
+            <div id="info-inicio" class="column">
+                <section id="titulos-inicio" class="column">
+                    <h1 id="titulo-inicio">UNDERCHECK</h1>
+                    <p id="sub-titulo-inicio">Keep it Under</p>
+                </section>
+                <section id="btns-inicio" class="row">
+                    <a href="{% url 'crearevento' %}" class="btn-secundario" title="Crear Evento">Crear Evento</a>
+                    <a href="{% url 'login' %}" class="btn-principal" title="Ingresar">Ingresar</a>
+                </section>
+            </div>
+            <a id="flechas-inicio" class="column" href="#nosotros">
+                <img src="{% static 'img/arrow.png' %}" alt="" id="flecha1" class="flecha">
+                <img src="{% static 'img/arrow.png' %}" alt="" id="flecha2" class="flecha">
+                <img src="{% static 'img/arrow.png' %}" alt="" id="flecha3" class="flecha">
+            </a>
+        </div>
+        
+    </div>
+    <div id="nosotros" class="row secciones">
+        <div class="row">
+            <section id="animacion-nosotros">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/aa88af74-48b3-44e1-8526-40c9e727550c/qMPGh3ceN6.json" background="#fff" speed="1" style="width: 500px; height: 500px" loop autoplay direction="1" mode="normal"></lottie-player>
+            </section>
+            <section id="nosotros-text">
+                <h2>Nosotros</h2>
+                <p id="texto-nosotros"><span>UnderCheck®</span> nace de una necesidad. Nace del Under Porteño, y de las restricciones para poder acceder a una plataforma de calidad, pero al mismo tiempo low cost.</p>
+                <p>Para poner en contexto, las ticketeras “líderes” toman valores de intereses elevados (15% y 20%) con respecto al Ticket, y esto eleva los costos generales en cuanto al evento.</p>
+                <p>En pocas palabras, <span>UnderCheck®</span> llega al público para poder ampliar el uso de una plataforma de calidad, fácil de usar , intuitiva, y claramente para todos.</p><br>
+                <em>“ Keep it Under “</em>
+            </section>
+        </div>
+    </div>
+    <div id="planes" class="row secciones">
+        <div class="row">
+            <section id="planes-text">
+                <h2>Planes</h2>
+                <p id="texto-planes">Actualmente contamos con dos tipos de planes:</p>
+                <p><span>Paquetes Customizables</span><br>
+                    Paquetes ya pre-seteados con respecto a la cantidad de Tickets, y tambien customizables depende la necesidad del cliente.</p>
+                <p><span>Por cantidad de tickets</span><br>
+                    Plan libre, ilimitado en el cual se toma el monto total de tickets cortados.</p>
+            </section>
+            <section id="animacion-planes">
+                <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script><lottie-player src="https://lottie.host/c2a07ed4-5016-4503-a2a4-1b6d1f59741d/7uikK6SMYD.json" background="#FFFFFF" speed="1" style="width: 500px; height: 500px" loop autoplay direction="1" mode="normal"></lottie-player>
+            </section>
+        </div>
+    </div>
+    <div id="por-que-elegirnos" class="column secciones">
+        <div id="por-que-elegirnos-box" class="row">
+            <section id="animacion-por-que-elegirnos">
+                <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+                <dotlottie-player src="https://lottie.host/252cad99-d75a-40a3-97e7-f6f5c81ca498/O8w4wUA1TT.json" background="transparent" speed="1" style="width: 500px; height: 500px;" loop autoplay></dotlottie-player>
+            </section>
+            <section id="porqueelegirnos-text">
+                <h2>Por qué elegirnos</h2>
+                <p id="texto-por-que-elegirnos">Somos una Empresa Joven que entiende las necesidades del Under de hoy. Por lo tanto, nos ponemos en los zapatos del cliente a la hora de pensar el servicio.</p>
+                <ul id="motivos">
+                    <li class="row"><i class="fa-solid fa-check"></i><span>Intuitivo</span></li>
+                    <li class="row"><i class="fa-solid fa-check"></i><span>Low Cost</span></li>
+                    <li class="row"><i class="fa-solid fa-check"></i><span>Nos amoldamos a tus necesidades</span></li>
+                    <li class="row"><i class="fa-solid fa-check"></i><span>Soporte 24hs</span></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <div id="contacto" class="column secciones contacto">
+        <!-- FOOTER -->
+        {% include 'footer.html' %}
+    </div>
+</main>
+{% endblock %}
